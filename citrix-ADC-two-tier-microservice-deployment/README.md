@@ -1,7 +1,7 @@
 ## Learn how to deploy Citrix ADC in two tier microservices topology using MInikube
 
 
-Citrix ADC offers the two-tier architecture deployment solution to load balance the enterprise grade applications deployed in microservices and access it from outside kubernetes cluster. Tier 1 Citrix ADC routes the traditional North-South traffic and VPX/SDX/MPX can act as your Tier 1 ADC, whereas CPX (containerized Citrix ADC) act as Tier 2 ADC and route the East-West traffic. We are going deploy microservices using yaml files located in yamlFiles folder.
+Citrix ADC offers the two-tier architecture deployment solution to load balance the enterprise grade applications deployed in microservices and access it from outside kubernetes cluster. Tier 1 Citrix ADC routes the traditional North-South traffic and VPX/SDX/MPX can act as your Tier 1 ADC, whereas CPX (containerized Citrix ADC) act as Tier 2 ADC and route the East-West traffic. We are going deploy microservices using yaml files located in yaml-files folder.
 ![two-tier-deployment](https://user-images.githubusercontent.com/42699135/53289454-1e1b5d80-37bc-11e9-9a53-08e7bcbc646b.PNG)
 
 Here are the detailed demo steps for tier 1 and tier 2 microservice deployment using Minikube.
@@ -17,19 +17,12 @@ Please visit https://kubernetes.io/docs/tasks/access-application-cluster/web-ui-
 kubectl create namespace tier-2-adc
 kubectl create namespace team-colddrink
 ```
-3. Copy the yaml files from ``/example-cpx-vpx-for-kubernetes-2-tier-microservices/yamlFiles/`` to minikube node ``/root/yamls`` directory
+3. Copy the yaml files from ``Minikube-example-Citrix-ADC-microservice-deployment/citrix-ADC-two-tier-microservice-deployment/yaml-files/`` to minikube node ``/root/yamls`` directory
 4. Deploy the ``rbac.yaml`` in the default namespace to provide access to kubernetes resources
 ```
 kubectl create -f /root/yamls/rbac.yaml 
 ```
 5. Deploy the CPX as tier 2 ADC to route the traffic from Tier 1 to microservices using following commands,
-
-**Pre-Requsites:** 
-Citrix CPX deployment requires "image pull secrets" to download the CPX image.
-For generating new imagePullsecret, please raise a request to Citrix Slack. 
-
-Update the Secret provided by Citrix: 
-Update the ".dockerconfigjson" field under secret in CPX.yaml
 
 ```
 kubectl create -f /root/yamls/cpx-svcacct.yaml -n tier-2-adc
