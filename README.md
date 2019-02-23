@@ -41,3 +41,10 @@ minikube start --network-plugin=cni --extra-config=kubelet.network-plugin=cni
 export kubever=$(kubectl version | base64 | tr -d '\n')
 kubectl apply -f "https://cloud.weave.works/k8s/net?k8s-version=$kubever"
 ```
+6. Test the Kubernetes service and deploy the microservices
+```
+kubectl get nodes
+kubectl cluster-info
+```
+
+Refer two examples and try how does Citrix ADC enable solutions in North-South and East-West microservice deployment.
