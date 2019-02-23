@@ -1,0 +1,91 @@
+---
+apiVersion: v1
+kind: Secret
+metadata:
+  name: citrix-readonly-pull-secret
+data:
+  .dockerconfigjson: ewogICJhdXRocyI6IHsKICAgICJxdWF5LmlvIjogewogICAgICAiYXV0aCI6ICJZMmwwY21sNEszQnliMlIxWTNSdFlXNWhaMlZ0Wlc1ME9qWk9VbG8yTms5QldFMVlVRkJVU2xjNVFrZEtWRWsxU3pCUU1rSlFXa1k1UVRsSk5VbFRWVU5SUzBkU01UUmFUMWRWUVVwRlZsQktNMVpFVEZnM1Mxbz0iLAogICAgICAiZW1haWwiOiAiIgogICAgfQogIH0KfQ==
+type: kubernetes.io/dockerconfigjson
+---
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: cpx-ingress-colddrinks
+spec:
+  replicas: 1
+  template:
+    metadata:
+      name: cpx-ingress-colddrinks
+      annotations:
+        NETSCALER_AS_APP: "True"
+      labels:
+        app: cpx-ingress-colddrinks
+        app1: exporter
+    spec:
+      serviceAccountName: cpx
+      containers:
+      - name: cpx-ingress-colddrinks
+        image: "quay.io/citrix/citrix-k8s-cpx-ingress:latest"
+        ports:
+        - name: http
+          containerPort: 80
+        - name: https
+          containerPort: 443
+        securityContext:
+           privileged: true
+        env:
+         - name: "EULA"
+           value: "yes"
+        args:
+          - --ingress-classes
+            colddrink         
+        imagePullPolicy: Always
+      imagePullSecrets:
+      - name: citrix-readonly-pull-secret
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: lb-service-colddrinks
+  labels:
+    app: lb-service-colddrinks
+spec:
+  clusterIP: None
+  ports:
+  - port: 80
+    protocol: TCP
+    name: http
+    targetPort: 80
+  - port: 443
+    protocol: TCP
+    name: https
+    targetPort: 443
+  selector:
+    app: cpx-ingress-colddrinks
+
+---
+
+kind: Service
+apiVersion: v1
+metadata:
+  name: prometheus
+spec:
+  type: ExternalName
+  externalName: prometheus.monitoring.svc.cluster.local
+  ports:
+  - name: http
+    port: 9090
+
+---
+
+kind: Service
+apiVersion: v1
+metadata:
+  name: grafana
+spec:
+  type: ExternalName
+  externalName: grafana.monitoring.svc.cluster.local
+  ports:
+  - name: http
+    port: 3000
