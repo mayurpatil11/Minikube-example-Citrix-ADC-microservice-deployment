@@ -2,11 +2,11 @@
 
 
 Citrix ADC offers the two-tier architecture deployment solution to load balance the enterprise grade applications deployed in microservices and access it from outside kubernetes cluster. Tier 1 Citrix ADC routes the traditional North-South traffic and VPX/SDX/MPX can act as your Tier 1 ADC, whereas CPX (containerized Citrix ADC) act as Tier 2 ADC and route the East-West traffic. We are going deploy microservices using yaml files located in yamlFiles folder.
-##(Picture)
+![two-tier-deployment](https://user-images.githubusercontent.com/42699135/53289406-ad744100-37bb-11e9-8f88-3f4820482945.PNG)
 
 Here are the detailed demo steps for tier 1 and tier 2 microservice deployment using Minikube.
 1. Install the Minikube on the VM or laptop
-Please refer to (link) for installing minikube and proceed with next step.
+Please refer to (https://github.com/mayurpatil11/Minikube-example-Citrix-ADC-microservice-deployment#how-do-i-setup-minikube-for-deploying-microservices) for installing minikube and proceed with next step.
 
 If you want to deploy yamls using kubernetes dashboard, then please refer to below note.
 Note:
