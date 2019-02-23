@@ -12,7 +12,7 @@ spec:
         env:
          # Set NetScaler NSIP/SNIP, SNIP in case of HA (mgmt has to be enabled) 
          - name: "NS_IP"
-           value: "10.105.158.181"
+           value: "X.X.X.X"
          # Set username for Nitro
          # Set log level
          - name: "NS_ENABLE_MONITORING"
