@@ -2,6 +2,7 @@
 
 
 Citrix ADC offers the two-tier architecture deployment solution to load balance the enterprise grade applications deployed in microservices and access it from outside kubernetes cluster. Tier 1 Citrix ADC routes the traditional North-South traffic and VPX/SDX/MPX can act as your Tier 1 ADC, whereas CPX (containerized Citrix ADC) act as Tier 2 ADC and route the East-West traffic. We are going deploy microservices using yaml files located in yaml-files folder.
+
 ![two-tier-deployment](https://user-images.githubusercontent.com/42699135/53289454-1e1b5d80-37bc-11e9-9a53-08e7bcbc646b.PNG)
 
 Here are the detailed demo steps for tier 1 and tier 2 microservice deployment using Minikube.
@@ -12,6 +13,20 @@ If you want to deploy yamls using kubernetes dashboard, then please refer to bel
 Note:
 Set up a Kubernetes dashboard for deploying containerized applications.
 Please visit https://kubernetes.io/docs/tasks/access-application-cluster/web-ui-dashboard/ and follow the steps mentioned to bring the Kubernetes dashboard up as shown below.
+
+###Pre-requisites:-
+Network Configuration on Ingress NetScaler Device:-
+Ingress NetScaler (Tier 1 ADC) should be able to reach pods running in Minikube cluster therefore Network configuration is required for seamless communication from client to microservices. Hence, we have to add CNI network route information into the VPX. 
+Steps to add route information in VPX:-
+a. Do SSH login in minikube cluster and execute ``ifconfig``
+b. Look for CNI network IP, I have used weave network here,
+![weave_networkip](https://user-images.githubusercontent.com/42699135/53314538-d9d7ac80-38e4-11e9-80ae-ba516a2058e5.PNG)
+c. login to VPX and execute add route command refer to below command
+![add_route](https://user-images.githubusercontent.com/42699135/53314608-4a7ec900-38e5-11e9-9778-58646935df58.PNG)
+
+You can read more about network configuration on ingress NetScaler device from https://github.com/citrix/citrix-k8s-ingress-controller/blob/master/docs/network-config.md
+
+  
 2. Create a namespaces using minikube SSH console.
 ```
 kubectl create namespace tier-2-adc
