@@ -75,3 +75,9 @@ Add below entries in hosts file and save the file
 ```
 10. Now colddrink microservice is ready to be served outside kubernetes cluster.
 e.g. Goto your browser and access ``https://colddrink.beverages.com``
+Colddrink beverage web page is up and running now.
+![colddrinkpage](https://user-images.githubusercontent.com/42699135/53314912-c9283600-38e6-11e9-8ed1-3d781a6ed8a9.PNG)
+
+
+Use case:
+![cs_config](https://user-images.githubusercontent.com/42699135/53315006-3936bc00-38e7-11e9-99a2-593e1ce797eb.PNG)
