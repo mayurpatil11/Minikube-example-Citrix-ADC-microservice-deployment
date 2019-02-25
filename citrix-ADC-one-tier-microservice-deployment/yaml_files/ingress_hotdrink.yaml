@@ -1,0 +1,16 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: hotdrink-ingress
+  annotations:
+   kubernetes.io/ingress.class: "citrix"
+   ingress.citrix.com/frontend-ip: "10.105.158.183"
+spec:
+  rules:
+  - host:  hotdrink.beverages.com
+    http:
+      paths:
+      - path: /
+        backend:
+          serviceName: frontend-hotdrinks
+          servicePort: 80
