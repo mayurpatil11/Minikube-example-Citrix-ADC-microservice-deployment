@@ -22,6 +22,7 @@ a. Do SSH login in minikube cluster and execute ``ifconfig``
 b. Look for CNI network IP, I have used weave network here,
 ![weave_networkip](https://user-images.githubusercontent.com/42699135/53314538-d9d7ac80-38e4-11e9-80ae-ba516a2058e5.PNG)
 c. login to VPX and execute add route command refer to below command
+
 ![add_route](https://user-images.githubusercontent.com/42699135/53314608-4a7ec900-38e5-11e9-9778-58646935df58.PNG)
 
 You can read more about network configuration on ingress NetScaler device from https://github.com/citrix/citrix-k8s-ingress-controller/blob/master/docs/network-config.md
