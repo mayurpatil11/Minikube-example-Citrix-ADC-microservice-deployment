@@ -32,7 +32,7 @@ sudo mv -v minikube /usr/local/bin
 minikube version
 exit
 ```
-4. Start the Minikube with below command to support various CNI plugin
+4. Start the Minikube with below command to enable support for CNI plugins
 ```
 minikube start --network-plugin=cni --extra-config=kubelet.network-plugin=cni
 ```
@@ -47,4 +47,4 @@ kubectl get nodes
 kubectl cluster-info
 ```
 
-Refer two examples and try how does Citrix ADC enable solutions in North-South and East-West microservice deployment.
+Please refer to ``citrix-ADC-two-tier-microservice-deployment`` and ``citrix-ADC-one-tier-microservice-deployment`` examples which will enable you to deploy Citrix ADC in North-South and East-West microservice deployment using minikube.
