@@ -58,3 +58,8 @@ Add below entries in hosts file and save the file,
 e.g. Goto browser and access ``http://hotdrink.beverages.com``
 
 ![hotbeverage_webpage](https://user-images.githubusercontent.com/42699135/50677394-987efb00-101f-11e9-87d1-6523b7fbe95a.png)
+
+#### How does client traffic reaches to microservices?
+Client IP tries to connect to Tier 1 ADC and reaches to pods where microservices are running, detailed traffic flow is allocated in following figure.
+![traffic-flow](https://user-images.githubusercontent.com/42699135/53506479-102b4c80-3adc-11e9-9b35-b91179e72f2e.PNG)
+
