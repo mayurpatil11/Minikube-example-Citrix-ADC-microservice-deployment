@@ -78,3 +78,7 @@ e.g. Goto your browser and access ``https://colddrink.beverages.com``
 Colddrink beverage web page is up and running now.
 ![colddrinkpage](https://user-images.githubusercontent.com/42699135/53314912-c9283600-38e6-11e9-8ed1-3d781a6ed8a9.PNG)
 
+#### How does client traffic reaches to microservices?
+Client send the traffic to Tier 1 ADC thorugh Content Switching virtual server and reaches to pods where microservices are running. Detailed traffic flow is allocated in following figure.
+![traffic-flow](https://user-images.githubusercontent.com/42699135/53507041-2be32280-3add-11e9-9129-dc980cc2767a.PNG)
+
