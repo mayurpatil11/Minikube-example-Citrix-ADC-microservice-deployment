@@ -59,7 +59,4 @@ e.g. Goto browser and access ``http://hotdrink.beverages.com``
 
 ![hotbeverage_webpage](https://user-images.githubusercontent.com/42699135/50677394-987efb00-101f-11e9-87d1-6523b7fbe95a.png)
 
-#### How does client traffic reaches to microservices?
-Client send the traffic to Tier 1 ADC thorugh Content Switching virtual server and reaches to pods where microservices are running. Detailed traffic flow is allocated in following figure.
-![traffic-flow](https://user-images.githubusercontent.com/42699135/53507041-2be32280-3add-11e9-9129-dc980cc2767a.PNG)
 
