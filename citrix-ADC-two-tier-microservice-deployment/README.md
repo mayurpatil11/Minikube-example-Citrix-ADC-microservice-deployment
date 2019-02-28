@@ -14,7 +14,7 @@ Note:
 Set up a Kubernetes dashboard for deploying containerized applications.
 Please visit https://kubernetes.io/docs/tasks/access-application-cluster/web-ui-dashboard/ and follow the steps mentioned to bring the Kubernetes dashboard up as shown below.
 
-###Pre-requisites:-
+#### Pre-requisites:-
 Network Configuration on Ingress NetScaler Device:-
 Ingress NetScaler (Tier 1 ADC) should be able to reach pods running in Minikube cluster therefore Network configuration is required for seamless communication from client to microservices. Hence, we have to add CNI network route information into the VPX. 
 Steps to add route information in VPX:-
@@ -80,5 +80,5 @@ Colddrink beverage web page is up and running now.
 
 #### How does client traffic reaches to microservices?
 Client send the traffic to Tier 1 ADC thorugh Content Switching virtual server and reaches to pods where microservices are running. Detailed traffic flow is allocated in following figure.
-![traffic-flow](https://user-images.githubusercontent.com/42699135/53507041-2be32280-3add-11e9-9129-dc980cc2767a.PNG)
+![minikube-1tier-gif](https://user-images.githubusercontent.com/42699135/53575043-c2274f00-3b96-11e9-97f6-08f988b11b1e.gif)
 
