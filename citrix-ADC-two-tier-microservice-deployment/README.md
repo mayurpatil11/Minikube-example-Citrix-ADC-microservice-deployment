@@ -78,8 +78,8 @@ e.g. Goto your browser and access ``https://colddrink.beverages.com``
 Colddrink beverage web page is up and running now.
 ![colddrinkpage](https://user-images.githubusercontent.com/42699135/53314912-c9283600-38e6-11e9-8ed1-3d781a6ed8a9.PNG)
 
-#### How does client traffic reaches to microservices?
-Client send the traffic to Tier 1 ADC thorugh Content Switching virtual server and reaches to pods where microservices are running. Detailed traffic flow is allocated in following gif picture (please wait for a moment on gif picture to see the packet flow).
-![minikube-2tier](https://user-images.githubusercontent.com/42699135/53618985-a57d2c80-3c13-11e9-8204-f193d3124a26.gif)
+#### How does client traffic reaches to colddrink-beverage microservices?
+Client send the traffic to Tier 1 ADC thorugh Content Switching virtual server and reaches to pods where colddrink beverage microservices are running. Detailed traffic flow is allocated in following gif picture (please wait for a moment on gif picture to see the packet flow).
+![minikube-2tier](https://user-images.githubusercontent.com/42699135/53620364-b11f2200-3c18-11e9-8eae-c7753072f52b.gif)
 
 
