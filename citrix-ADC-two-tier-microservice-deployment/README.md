@@ -80,5 +80,6 @@ Colddrink beverage web page is up and running now.
 
 #### How does client traffic reaches to microservices?
 Client send the traffic to Tier 1 ADC thorugh Content Switching virtual server and reaches to pods where microservices are running. Detailed traffic flow is allocated in following gif picture (please wait for a moment on gif picture to see the packet flow).
-![minikube-1tier-gif](https://user-images.githubusercontent.com/42699135/53575486-a96b6900-3b97-11e9-90b7-40b6147f788e.gif)
+![minikube-2tier](https://user-images.githubusercontent.com/42699135/53618985-a57d2c80-3c13-11e9-8204-f193d3124a26.gif)
+
 
