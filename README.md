@@ -14,7 +14,7 @@ wget -q https://www.virtualbox.org/download/oracle_vbox.asc -O- | sudo apt-key a
 sudo su
 echo "deb https://download.virtualbox.org/virtualbox/debian xenial contrib" >> /etc/apt/sources.list
 apt-get update
-sudo apt-get install virtualbox virtualbox-ext-pac
+sudo apt-get install virtualbox virtualbox-ext-pack
 ```
 2. Install Kubectl
 ```
