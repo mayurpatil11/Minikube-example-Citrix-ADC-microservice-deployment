@@ -16,6 +16,9 @@ echo "deb https://download.virtualbox.org/virtualbox/debian xenial contrib" >> /
 apt-get update
 sudo apt-get install virtualbox virtualbox-ext-pack
 ```
+**Note**
+VirtualBox may ask you accept the license agreement of VirtualBox Extension Pack. Just press <Tab> and then press <Enter> to accept it.
+ 
 2. Install Kubectl
 ```
 sudo apt-get update && sudo apt-get install -y apt-transport-https
