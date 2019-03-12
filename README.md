@@ -5,14 +5,14 @@ Minikube is a tool that makes it easy to run Kubernetes locally. Minikube runs a
 Minikube can be installed on OS, Windows or Linux OS. Please refere to https://kubernetes.io/docs/setup/minikube/#installation guide for complete Minikube setup.
 
 Install Minikube on Ubuntu VM using the custom script.
+
 ***Note:-*** We have developed the in-house script for bringing the Minikube on Ubuntu VM. This smart script is an alternative to virtualbox installation and zero error prone due to no dependencies on virtualbox. Script will install following componends;
 a. Docker
 b. Minikube
 c. kubectl
 d. Curl
-If any of the above applications are present then script will prompt for upgrade option.
+If any of the above applications are present then script will prompt for upgrade option. ***This script will run only on Ubuntu VM.***
 
-***This script will run only on Ubuntu VM.***
 
 1. Copy the ``minikube-script.sh`` script located in /install-Minikube/ folder and save it in your VM under ``/root/`` repository
 
