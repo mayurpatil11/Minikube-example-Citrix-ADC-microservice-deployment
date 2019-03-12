@@ -11,7 +11,8 @@ b. Minikube
 c. kubectl
 d. Curl
 If any of the above applications are present then script will prompt for upgrade option.
-####***This script will run only on Ubuntu VM.***
+
+***This script will run only on Ubuntu VM.***
 
 1. Copy the ``minikube-script.sh`` script located in /install-Minikube/ folder and save it in your VM under ``/root/`` repository
 
