@@ -31,6 +31,7 @@ kubectl get nodes
 ```
 
 Please download this example repository (which contains yaml files) from the ***clone or download*** option, required for demonstrating cloud native examples.
+
 Please refer to ``citrix-ADC-two-tier-microservice-deployment`` and ``citrix-ADC-one-tier-microservice-deployment`` examples which will enable you to deploy Citrix ADC in North-South and East-West microservice deployment using minikube.
 
 More details on Citrix ingress controller is located here- https://github.com/citrix/citrix-k8s-ingress-controller
